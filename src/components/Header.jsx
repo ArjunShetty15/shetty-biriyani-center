@@ -19,31 +19,32 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 left-0 w-full z-50 bg-[#fcf9f4]/95 backdrop-blur-md border-b border-[#ddc0ba]/40 shadow-[0_1px_8px_rgba(28,25,23,0.03)] transition-all">
-      <div className="h-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
+      <div className="h-20 max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 flex items-center justify-between gap-2 sm:gap-4">
         
         {/* Restaurant Branding */}
         <Link 
           to="/" 
           onClick={closeMenu}
-          className="flex flex-col group focus:outline-none"
+          className="flex flex-col justify-center min-w-0 shrink group focus:outline-none py-1"
         >
-          <span className="font-serif-editorial text-xl sm:text-2xl tracking-tight text-[#1c1c19] uppercase font-medium group-hover:text-[#9d3d26] transition-colors">
-            {RESTAURANT_INFO.name}
+          <span className="font-serif-editorial text-[17px] sm:text-lg xl:text-2xl tracking-tight text-[#1c1c19] uppercase font-medium group-hover:text-[#9d3d26] transition-colors leading-[1.12] sm:leading-tight sm:whitespace-nowrap">
+            <span className="block sm:inline">Shetty Biriyani </span>
+            <span className="block sm:inline">Center</span>
           </span>
-          <span className="text-[11px] sm:text-xs text-[#5c604c] uppercase tracking-[0.16em] font-semibold mt-0.5">
+          <span className="text-[10px] sm:text-[11px] lg:text-xs text-[#5c604c] uppercase tracking-[0.14em] sm:tracking-[0.16em] font-semibold mt-0.5 whitespace-nowrap">
             {RESTAURANT_INFO.shortLocation}
           </span>
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-7">
+        <nav className="hidden lg:flex items-center gap-3.5 xl:gap-7">
           {navLinks.map((link) => (
             <NavLink
               key={link.to}
               to={link.to}
               end={link.to === '/'}
               className={({ isActive }) =>
-                `text-[13px] uppercase tracking-wider transition-colors py-1 relative ${
+                `text-xs xl:text-[13px] uppercase tracking-wider transition-colors py-1 relative ${
                   isActive
                     ? 'text-[#9d3d26] font-semibold'
                     : 'text-[#56423d] hover:text-[#1c1c19] font-medium'
@@ -67,10 +68,10 @@ export default function Header() {
         </nav>
 
         {/* Action CTAs */}
-        <div className="flex items-center gap-2 sm:gap-4">
+        <div className="flex items-center gap-1.5 sm:gap-3 xl:gap-4 shrink-0">
           <a
             href={RESTAURANT_INFO.phoneTel}
-            className="hidden sm:inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider px-3.5 py-2 rounded border border-[#8a726c]/40 text-[#1c1c19] hover:bg-[#ebe8e3] transition-colors whitespace-nowrap"
+            className="hidden xl:inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider px-3.5 py-2 rounded border border-[#8a726c]/40 text-[#1c1c19] hover:bg-[#ebe8e3] transition-colors whitespace-nowrap"
             title="Call Restaurant Directly"
           >
             <span className="material-symbols-outlined text-[17px] text-[#5c604c]">call</span>
@@ -81,9 +82,9 @@ export default function Header() {
             href={RESTAURANT_INFO.orderLinks.zomato}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider px-4 py-2 rounded bg-[#9d3d26] text-white hover:bg-[#802913] transition-colors shadow-sm whitespace-nowrap"
+            className="inline-flex items-center gap-1 sm:gap-1.5 text-[11px] sm:text-xs font-semibold uppercase tracking-wider px-2.5 sm:px-4 py-1.5 sm:py-2 rounded bg-[#9d3d26] text-white hover:bg-[#802913] transition-colors shadow-sm whitespace-nowrap"
           >
-            <span className="material-symbols-outlined text-[17px]">shopping_bag</span>
+            <span className="material-symbols-outlined text-[15px] sm:text-[17px]">shopping_bag</span>
             <span>Order Online</span>
           </a>
 
@@ -91,7 +92,7 @@ export default function Header() {
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 rounded text-[#1c1c19] hover:bg-[#ebe8e3] transition-colors focus:outline-none"
+            className="lg:hidden p-1.5 sm:p-2 rounded text-[#1c1c19] hover:bg-[#ebe8e3] transition-colors focus:outline-none shrink-0"
             aria-label="Toggle navigation menu"
             aria-expanded={mobileMenuOpen}
           >
