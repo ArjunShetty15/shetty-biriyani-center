@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-surface: #fcf9f4;
+    --bg-surface-low: #f6f3ee;
+    --bg-surface-container: #f0ede9;
+    --bg-surface-high: #ebe8e3;
+    --bg-surface-highest: #e5e2dd;
+    --color-on-surface: #1c1c19;
+    --color-on-surface-variant: #56423d;
+    --color-primary: #9d3d26;
+    --color-primary-hover: #802913;
+    --color-primary-fixed: #ffdad2;
+    --color-secondary: #5c604c;
+    --color-tertiary: #6c5847;
+    --color-outline: #8a726c;
+    --color-outline-variant: #ddc0ba;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: #fcf9f4;
+    color: #1c1c19;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+
+  body {
+    background-color: #fcf9f4;
+    color: #1c1c19;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-serif-editorial {
+    font-family: 'Newsreader', Georgia, serif;
+  }
+}
+
+/* Material Symbols sizing helper */
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+  vertical-align: middle;
+}
+
+/* Editorial Dotted Leader Line for Menu */
+.leader-line {
+  flex-grow: 1;
+  border-bottom: 1px dotted rgba(138, 114, 108, 0.45);
+  margin: 0 0.75rem;
+  position: relative;
+  top: -4px;
+}
+
+/* Smooth Focus Outlines */
+a:focus-visible, button:focus-visible {
+  outline: 2px solid #9d3d26;
+  outline-offset: 2px;
+}
